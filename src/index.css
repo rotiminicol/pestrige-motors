@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Sriracha&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Sriracha&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 40s linear infinite;
+}
+
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+
+/* Text field */
+
+.label {
+  @apply block text-yellow-400 text-sm font-normal mb-2
+}
+
+.text-field{
+  @apply block outline-none w-full px-3 py-3 text-sm bg-white border border-black rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-sky-400 focus:ring-2
+}
+
+.text-field::placeholder{
+  @apply text-yellow-500
+}
