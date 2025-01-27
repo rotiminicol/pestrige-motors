@@ -2,70 +2,59 @@ import HeroPng from "../../assets/logo.png";
 
 const Hero = () => {
   return (
-    <>
-      <div className="min-h-[550px] sm:min-h-[600px] bg-black flex justify-center items-center text-white">
-        <div className="container pb-8 sm:pb-0">
-          <div className="grid grid-cols-1 sm:grid-cols-2">
-            {/* text content section */}
-            <div className="flex flex-col justify-center gap-6 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1">
-              <h1
-                data-aos="fade-up"
-                data-aos-once="true"
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold font-serif"
-              >
-                We offer the most{" "}
-                <span
-                  data-aos="zoom-out"
-                  data-aos-delay="300"
-                  className="bg-clip-text text-transparent bg-gradient-to-b bg-yellow-500 font-cursive"
-                >
-                  Luxurious Cars
-                </span>{" "}
-                in the city at{" "}
-                <span
-                  data-aos="zoom-out"
-                  data-aos-delay="300"
-                  className="bg-clip-text text-transparent bg-gradient-to-b bg-yellow-500 font-cursive"
-                >
-                  Affordable Prices
-                </span>
-              </h1>
-              <div data-aos="fade-up" data-aos-delay="400">
-                <button className="bg-gradient-to-r bg-yellow-500 hover:scale-105 duration-200 text-white py-2 px-4 rounded-full">
-                  Drive Your Dream
-                </button>
-              </div>
-            </div>
-            {/* Image section */}
-            <div
-              data-aos="zoom-in"
-              data-aos-duration="300"
-              className="min-h-[450px] flex justify-center items-center relative order-1 sm:order-2"
+    <div className="min-h-screen bg-black flex justify-center items-center text-white mt-0 pt-0">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col sm:flex-row items-center sm:items-center gap-8">
+          {/* Text Content */}
+          <div className="flex flex-col justify-center gap-6 text-center sm:text-left order-2 sm:order-1 flex-1">
+            <h1
+              data-aos="fade-up"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[Playfair Display]"
             >
-              <img
-                data-aos-once="true"
-                src={HeroPng}
-                alt="luxury car"
-                className="w-[300px] sm:w-[450px] sm:scale-125 mx-auto spin"
-              />
-              <div
-                data-aos="fade-left"
-                className="bg-gradient-to-r bg-yellow-500 p-3 rounded-xl absolute top-10 left-10"
+              Your Journey,{" "}
+              <span
+                data-aos="zoom-in"
+                data-aos-delay="200"
+                className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-300"
               >
-                <h1 className="text-white">HEY PAPHOS</h1>
-              </div>
-              <div
-                data-aos="fade-right"
-                data-aos-offset="0"
-                className="bg-gradient-to-r bg-yellow-500 p-3 rounded-xl absolute bottom-10 right-10"
-              >
-                <h1 className="text-white"> LUXURY CARS</h1>
-              </div>
+                Redefined
+              </span>
+            </h1>
+            <p
+              data-aos="fade-up"
+              data-aos-delay="400"
+              className="text-lg sm:text-xl text-white/80 max-w-lg mx-auto sm:mx-0"
+            >
+              Experience unparalleled luxury and sophistication in every mile.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="600">
+            <a 
+                      href="https://www.instagram.com/prestige_motors.cy/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex-1"
+                    >
+              <button className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:bg-yellow-600 hover:scale-105 transition-transform duration-300 text-white py-3 px-6 rounded-full shadow-lg text-lg">
+                Discover Now
+              </button>
+              </a>
             </div>
+          </div>
+
+          {/* Image Content */}
+          <div
+            data-aos="zoom-in"
+            className="relative flex justify-center items-center order-1 sm:order-2 flex-1"
+          >
+            <img
+              src={HeroPng}
+              alt="Luxury Car"
+              className="w-[300px] sm:w-[350px] lg:w-[450px] transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

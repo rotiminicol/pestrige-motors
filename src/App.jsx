@@ -1,11 +1,10 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Services from "./components/Services/Services.jsx";
 import Banner from "./components/Banner/Banner.jsx";
 import Testimonials from "./components/Testimonials/Testimonials.jsx";
 import Footer from "./components/Footer/Footer.jsx";
- // Import the Loader component
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Loader from "./components/Loader.jsx";
@@ -33,15 +32,29 @@ const App = () => {
 
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-x-hidden">
-      {loading && <Loader/>}
+      {loading && <Loader />}
       <Navbar />
-      <Hero />
-      <Arrival />
-      <Banner />
-      <Services />
-      <Polish />
-      <Testimonials />
-      <Contact />
+      <div className="section-border-shadow">
+        <Hero />
+      </div>
+      <div className="section-border-shadow">
+        <Arrival />
+      </div>
+      <div className="section-border-shadow">
+        <Banner />
+      </div>
+      <div className="section-border-shadow">
+        <Services />
+      </div>
+      <div className="section-border-shadow">
+        <Polish />
+      </div>
+      <div className="section-border-shadow">
+        <Testimonials />
+      </div>
+      <div className="section-border-shadow">
+        <Contact />
+      </div>
       <Footer />
     </div>
   );

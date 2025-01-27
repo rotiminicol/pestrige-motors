@@ -10,26 +10,8 @@ import Img9 from "../../assets/img9.png";
 import Img10 from "../../assets/img10.png";
 import Img11 from "../../assets/img11.png";
 import Img12 from "../../assets/img12.png";
-import Img13 from "../../assets/img13.png";
-import Img14 from "../../assets/img14.png";
-import Img15 from "../../assets/img15.png";
-import Img16 from "../../assets/img15.png";
-import Img17 from "../../assets/img15.png";
-import Img18 from "../../assets/img15.png";
-import Img19 from "../../assets/img15.png";
-import Img20 from "../../assets/img15.png";
-import Img21 from "../../assets/img15.png";
-import Img22 from "../../assets/img15.png";
-import Img23 from "../../assets/img15.png";
-import Img24 from "../../assets/img15.png";
-import Img25 from "../../assets/img15.png";
-import Img26 from "../../assets/img15.png";
-import Img27 from "../../assets/img15.png";
-import Img28 from "../../assets/img15.png";
-import Img29 from "../../assets/img15.png";
-import Img30 from "../../assets/img15.png";
-
-
+import { useState } from 'react';
+import { Heart, Share2, Info, Calendar, ArrowRight } from 'lucide-react';
 
 const ServicesData = [
   {
@@ -38,10 +20,9 @@ const ServicesData = [
     brand: "Toyota",
     model: "Corolla",
     year: 2022,
-    price: "$20,000",
-    description:
-      "A reliable and fuel-efficient compact sedan with modern features.",
-    aosDelay: "100",
+    price: "€20,000",
+    description: "A reliable and fuel-efficient compact sedan with modern features.",
+    category: "All",
   },
   {
     id: 2,
@@ -49,10 +30,9 @@ const ServicesData = [
     brand: "Honda",
     model: "Civic",
     year: 2023,
-    price: "$22,000",
-    description:
-      "A sporty and stylish sedan with advanced safety features and great performance.",
-    aosDelay: "300",
+    price: "€22,000",
+    description: "A sporty and stylish sedan with advanced safety features and great performance.",
+    category: "Luxury",
   },
   {
     id: 3,
@@ -60,10 +40,9 @@ const ServicesData = [
     brand: "Ford",
     model: "Mustang",
     year: 2021,
-    price: "$35,000",
-    description:
-      "An iconic sports car offering thrilling performance and head-turning design.",
-    aosDelay: "500",
+    price: "€35,000",
+    description: "An iconic sports car offering thrilling performance and head-turning design.",
+    category: "Sports",
   },
   {
     id: 4,
@@ -71,10 +50,9 @@ const ServicesData = [
     brand: "Tesla",
     model: "Model 3",
     year: 2023,
-    price: "$40,000",
-    description:
-      "An electric car that combines efficiency, innovation, and state-of-the-art technology.",
-    aosDelay: "100",
+    price: "€40,000",
+    description: "An electric car that combines efficiency, innovation, and state-of-the-art technology.",
+    category: "Electric",
   },
   {
     id: 5,
@@ -82,10 +60,9 @@ const ServicesData = [
     brand: "Chevrolet",
     model: "Camaro",
     year: 2020,
-    price: "$30,000",
-    description:
-      "A high-performance sports car with a muscular design and powerful engine options.",
-    aosDelay: "300",
+    price: "€30,000",
+    description: "A high-performance sports car with a muscular design and powerful engine options.",
+    category: "Sports",
   },
   {
     id: 6,
@@ -93,10 +70,9 @@ const ServicesData = [
     brand: "BMW",
     model: "3 Series",
     year: 2022,
-    price: "$45,000",
-    description:
-      "A luxury sedan offering a perfect blend of comfort, technology, and performance.",
-    aosDelay: "500",
+    price: "€45,000",
+    description: "A luxury sedan offering a perfect blend of comfort, technology, and performance.",
+    category: "Luxury",
   },
   {
     id: 7,
@@ -104,10 +80,9 @@ const ServicesData = [
     brand: "Mercedes-Benz",
     model: "C-Class",
     year: 2023,
-    price: "$50,000",
-    description:
-      "A premium sedan with a stylish design, luxurious interiors, and advanced features.",
-    aosDelay: "100",
+    price: "€50,000",
+    description: "A premium sedan with a stylish design, luxurious interiors, and advanced features.",
+    category: "Luxury",
   },
   {
     id: 8,
@@ -115,10 +90,9 @@ const ServicesData = [
     brand: "Audi",
     model: "A4",
     year: 2022,
-    price: "$43,000",
-    description:
-      "A sophisticated and elegant luxury sedan with cutting-edge technology.",
-    aosDelay: "300",
+    price: "€43,000",
+    description: "A sophisticated and elegant luxury sedan with cutting-edge technology.",
+    category: "Luxury",
   },
   {
     id: 9,
@@ -126,10 +100,9 @@ const ServicesData = [
     brand: "Jeep",
     model: "Wrangler",
     year: 2021,
-    price: "$35,000",
-    description:
-      "A rugged SUV built for off-road adventures and unmatched durability.",
-    aosDelay: "500",
+    price: "€35,000",
+    description: "A rugged SUV built for off-road adventures and unmatched durability.",
+    category: "SUV",
   },
   {
     id: 10,
@@ -137,10 +110,9 @@ const ServicesData = [
     brand: "Hyundai",
     model: "Elantra",
     year: 2023,
-    price: "$20,000",
-    description:
-      "A compact sedan that combines affordability with advanced features and a sleek design.",
-    aosDelay: "100",
+    price: "€20,000",
+    description: "A compact sedan that combines affordability with advanced features and a sleek design.",
+    category: "All",
   },
   {
     id: 11,
@@ -148,10 +120,9 @@ const ServicesData = [
     brand: "Toyota",
     model: "Corolla",
     year: 2022,
-    price: "$20,000",
-    description:
-      "A reliable and fuel-efficient compact sedan with modern features.",
-    aosDelay: "100",
+    price: "€20,000",
+    description: "A reliable and fuel-efficient compact sedan with modern features.",
+    category: "All",
   },
   {
     id: 12,
@@ -159,269 +130,192 @@ const ServicesData = [
     brand: "Honda",
     model: "Civic",
     year: 2023,
-    price: "$22,000",
-    description:
-      "A sporty and stylish sedan with advanced safety features and great performance.",
-    aosDelay: "300",
-  },
-  {
-    id: 13,
-    img: Img13,
-    brand: "Ford",
-    model: "Mustang",
-    year: 2021,
-    price: "$35,000",
-    description:
-      "An iconic sports car offering thrilling performance and head-turning design.",
-    aosDelay: "500",
-  },
-  {
-    id: 14,
-    img: Img14,
-    brand: "Tesla",
-    model: "Model 3",
-    year: 2023,
-    price: "$40,000",
-    description:
-      "An electric car that combines efficiency, innovation, and state-of-the-art technology.",
-    aosDelay: "100",
-  },
-  {
-    id: 15,
-    img: Img15,
-    brand: "Chevrolet",
-    model: "Camaro",
-    year: 2020,
-    price: "$30,000",
-    description:
-      "A high-performance sports car with a muscular design and powerful engine options.",
-    aosDelay: "300",
-  },
-  {
-    id: 16,
-    img: Img16,
-    brand: "BMW",
-    model: "3 Series",
-    year: 2022,
-    price: "$45,000",
-    description:
-      "A luxury sedan offering a perfect blend of comfort, technology, and performance.",
-    aosDelay: "500",
-  },
-  {
-    id: 17,
-    img: Img17,
-    brand: "Mercedes-Benz",
-    model: "C-Class",
-    year: 2023,
-    price: "$50,000",
-    description:
-      "A premium sedan with a stylish design, luxurious interiors, and advanced features.",
-    aosDelay: "100",
-  },
-  {
-    id: 18,
-    img: Img18,
-    brand: "Audi",
-    model: "A4",
-    year: 2022,
-    price: "$43,000",
-    description:
-      "A sophisticated and elegant luxury sedan with cutting-edge technology.",
-    aosDelay: "300",
-  },
-  {
-    id: 19,
-    img: Img19,
-    brand: "Jeep",
-    model: "Wrangler",
-    year: 2021,
-    price: "$35,000",
-    description:
-      "A rugged SUV built for off-road adventures and unmatched durability.",
-    aosDelay: "500",
-  },
-  {
-    id: 20,
-    img: Img20,
-    brand: "Hyundai",
-    model: "Elantra",
-    year: 2023,
-    price: "$20,000",
-    description:
-      "A compact sedan that combines affordability with advanced features and a sleek design.",
-    aosDelay: "100",
-  },
-  {
-    id: 21,
-    img: Img21,
-    brand: "Toyota",
-    model: "Corolla",
-    year: 2022,
-    price: "$20,000",
-    description:
-      "A reliable and fuel-efficient compact sedan with modern features.",
-    aosDelay: "100",
-  },
-  {
-    id: 22,
-    img: Img22,
-    brand: "Honda",
-    model: "Civic",
-    year: 2023,
-    price: "$22,000",
-    description:
-      "A sporty and stylish sedan with advanced safety features and great performance.",
-    aosDelay: "300",
-  },
-  {
-    id: 23,
-    img: Img23,
-    brand: "Ford",
-    model: "Mustang",
-    year: 2021,
-    price: "$35,000",
-    description:
-      "An iconic sports car offering thrilling performance and head-turning design.",
-    aosDelay: "500",
-  },
-  {
-    id: 24,
-    img: Img24,
-    brand: "Tesla",
-    model: "Model 3",
-    year: 2023,
-    price: "$40,000",
-    description:
-      "An electric car that combines efficiency, innovation, and state-of-the-art technology.",
-    aosDelay: "100",
-  },
-  {
-    id: 25,
-    img: Img25,
-    brand: "Chevrolet",
-    model: "Camaro",
-    year: 2020,
-    price: "$30,000",
-    description:
-      "A high-performance sports car with a muscular design and powerful engine options.",
-    aosDelay: "300",
-  },
-  {
-    id: 26,
-    img: Img26,
-    brand: "BMW",
-    model: "3 Series",
-    year: 2022,
-    price: "$45,000",
-    description:
-      "A luxury sedan offering a perfect blend of comfort, technology, and performance.",
-    aosDelay: "500",
-  },
-  {
-    id: 27,
-    img: Img27,
-    brand: "Mercedes-Benz",
-    model: "C-Class",
-    year: 2023,
-    price: "$50,000",
-    description:
-      "A premium sedan with a stylish design, luxurious interiors, and advanced features.",
-    aosDelay: "100",
-  },
-  {
-    id: 28,
-    img: Img28,
-    brand: "Audi",
-    model: "A4",
-    year: 2022,
-    price: "$43,000",
-    description:
-      "A sophisticated and elegant luxury sedan with cutting-edge technology.",
-    aosDelay: "300",
-  },
-  {
-    id: 29,
-    img: Img29,
-    brand: "Jeep",
-    model: "Wrangler",
-    year: 2021,
-    price: "$35,000",
-    description:
-      "A rugged SUV built for off-road adventures and unmatched durability.",
-    aosDelay: "500",
-  },
-  {
-    id: 30,
-    img: Img30,
-    brand: "Hyundai",
-    model: "Elantra",
-    year: 2023,
-    price: "$20,000",
-    description:
-      "A compact sedan that combines affordability with advanced features and a sleek design.",
-    aosDelay: "100",
+    price: "€22,000",
+    description: "A sporty and stylish sedan with advanced safety features and great performance.",
+    category: "Luxury",
   },
 ];
 
-
-
-
-
-
-
 const Services = () => {
+  const [hoveredId, setHoveredId] = useState(null);
+  const [favorites, setFavorites] = useState(new Set());
+  const [selectedFilter, setSelectedFilter] = useState('All');
+
+  const toggleFavorite = (id) => {
+    setFavorites(prev => {
+      const newFavorites = new Set(prev);
+      if (newFavorites.has(id)) {
+        newFavorites.delete(id);
+      } else {
+        newFavorites.add(id);
+      }
+      return newFavorites;
+    });
+  };
+  const handlePurchaseClick = () => {
+    // Add your logic to show a popup or redirect to contact options like call or email.
+    alert("Contact us via email: client@example.com or Call: +1234567890");
+  };
+
+  const filteredServices = selectedFilter === 'All'
+    ? ServicesData
+    : ServicesData.filter(service => service.category === selectedFilter);
+
   return (
-    <>
+    <div className="relative overflow-hidden bg-gray-50">
       <span id="services"></span>
-      <div className="mt-10 py-10">
-        <div className="container mx-auto px-6 lg:px-20">
-          {/* Heading section */}
-          <div className="text-center mb-20">
-            <h1 className="text-5xl font-bold font-cursive text-gray-800">
-              Our Premium Car Collection
-            </h1>
-            <p className="text-lg text-gray-600 mt-4">
+      
+      {/* Decorative background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent"></div>
+      </div>
+
+      <div className="relative py-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          {/* Enhanced heading section */}
+          <div className="text-center mb-16">
+            <div className="inline-block">
+              <h1 className="text-5xl font-bold text-gray-800 mb-4 relative">
+                Premium Collection
+                <div className="absolute -right-8 -top-8 w-16 h-16 bg-yellow-100 rounded-full blur-xl opacity-60"></div>
+                <div className="absolute -left-8 -bottom-8 w-16 h-16 bg-blue-100 rounded-full blur-xl opacity-60"></div>
+              </h1>
+              <div className="h-1 w-40 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+            <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
               Explore our handpicked selection of cars that define luxury and performance.
             </p>
           </div>
 
-          {/* Services Card section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 place-items-center">
-            {ServicesData.map((service) => (
+          {/* Enhanced filter/sort section */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {['All', 'Luxury', 'Sports', 'Electric', 'SUV'].map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setSelectedFilter(filter)}
+                className={`px-6 py-2 rounded-full border-2 ${selectedFilter === filter ? 'border-gray-800 text-gray-900' : 'border-gray-200 text-gray-600'} 
+                  hover:border-gray-800 transition-all duration-300 hover:text-gray-900 hover:shadow-md`}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+
+          {/* Enhanced card grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            {filteredServices.map((service) => (
               <div
                 key={service.id}
-                data-aos="fade-up"
-                data-aos-delay={service.aosDelay}
-                className="rounded-xl bg-white hover:bg-gray-800 hover:text-white shadow-lg transform hover:-translate-y-2 duration-300 group w-full max-w-[400px] overflow-hidden"
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl 
+                  transition-all duration-500 transform hover:-translate-y-2"
+                onMouseEnter={() => setHoveredId(service.id)}
+                onMouseLeave={() => setHoveredId(null)}
               >
-                {/* Image Section */}
-                <div className="relative h-[200px] lg:h-[250px] overflow-hidden bg-gray-100">
+                {/* Image container with overlay */}
+                <div className="relative h-[280px] overflow-hidden">
                   <img
                     src={service.img}
                     alt={service.model}
-                    className="w-full h-full object-cover transform group-hover:scale-105 duration-300"
+                    className="w-full h-full object-cover transition-transform duration-700 
+                      group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Quick action buttons */}
+                  <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 
+                    transition-opacity duration-300">
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleFavorite(service.id);
+                      }}
+                      className={`p-2 rounded-full backdrop-blur-md transition-all duration-300 
+                        ${favorites.has(service.id) ? 'bg-red-500 text-white' : 'bg-white/80 hover:bg-white'}`}
+                    >
+                      <Heart className={`w-5 h-5 ${favorites.has(service.id) ? 'fill-current' : ''}`} />
+                    </button>
+                    <button className="p-2 rounded-full bg-white/80 hover:bg-white backdrop-blur-md 
+                      transition-all duration-300">
+                      <Share2 className="w-5 h-5" />
+                    </button>
+                  </div>
+
+                  {/* Price tag */}
+                  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 
+                    rounded-full shadow-lg">
+                    <span className="font-bold text-gray-900">{service.price}</span>
+                  </div>
                 </div>
 
-                {/* Description Section */}
-                <div className="p-6 text-center">
-                  <h1 className="text-2xl font-bold mb-2">{`${service.brand} ${service.model}`}</h1>
-                  <p className="text-gray-600 group-hover:text-gray-200 text-sm mb-3">
-                    Year: <span className="font-medium">{service.year}</span>
-                  </p>
-                  <p className="text-gray-600 group-hover:text-gray-200 text-sm mb-3">
-                    Price: <span className="font-medium">{service.price}</span>
-                  </p>
-                  <p className="text-gray-500 group-hover:text-gray-300 text-sm">
+                {/* Content section */}
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                        {service.brand} {service.model}
+                      </h2>
+                      <div className="flex gap-4 text-gray-600 text-sm">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-4 h-4" />
+                          {service.year}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Info className="w-4 h-4" />
+                          {service.brand}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-600 text-sm mb-6">
                     {service.description}
                   </p>
+
+                  {/* Action buttons */}
+                  <div className="flex gap-4">
+                    <button 
+                      onClick={handlePurchaseClick}
+                      className="flex-1 bg-black text-white py-3 px-6 rounded-lg font-medium 
+                      transform transition-all duration-300 hover:scale-105 hover:shadow-lg
+                      active:scale-95 group">
+                      <span className="flex items-center justify-center gap-2">
+                        Purchase Now
+                        <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </button>
+                  </div>
                 </div>
 
-                {/* Call to Action */}
-                <div className="bg-gray-800 text-white p-4 mt-2 text-center">
-                  <button className="bg-primary hover:bg-secondary text-white py-2 px-5 rounded-lg font-medium shadow-md transform hover:scale-105 duration-300">
-                    Learn More
+                {/* Hover reveal specs */}
+                <div className={`absolute inset-0 bg-black/90 text-white p-6 transform transition-all duration-500 
+                  ${hoveredId === service.id ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+                  <h3 className="text-xl font-bold mb-4">Vehicle Specifications</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-2">
+                      <span className="w-24 text-gray-400">Engine:</span>
+                      <span>2.0L Turbo</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-24 text-gray-400">Power:</span>
+                      <span>255 HP</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-24 text-gray-400">0-60 mph:</span>
+                      <span>5.6s</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-24 text-gray-400">MPG:</span>
+                      <span>26 city / 36 hwy</span>
+                    </li>
+                  </ul>
+
+                  <button 
+                  onClick={handlePurchaseClick}
+                  className="mt-6 w-full bg-white text-black py-3 rounded-lg font-medium
+                    transform transition-all duration-300 hover:scale-105">
+                    Purchase Now
                   </button>
                 </div>
               </div>
@@ -429,12 +323,8 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default Services;
-
-
-
-
