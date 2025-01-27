@@ -140,6 +140,7 @@ const Services = () => {
   const [hoveredId, setHoveredId] = useState(null);
   const [favorites, setFavorites] = useState(new Set());
   const [selectedFilter, setSelectedFilter] = useState('All');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleFavorite = (id) => {
     setFavorites(prev => {
@@ -152,9 +153,13 @@ const Services = () => {
       return newFavorites;
     });
   };
+
   const handlePurchaseClick = () => {
-    // Add your logic to show a popup or redirect to contact options like call or email.
-    alert("Contact us via email: client@example.com or Call: +1234567890");
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   const filteredServices = selectedFilter === 'All'
@@ -323,6 +328,36 @@ const Services = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+            <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+            <p className="mb-4">Please contact us via the following options:</p>
+            <div className="flex flex-col gap-4">
+              <a href="tel:+35796471717" className="w-full">
+                <button className="w-full bg-black text-white py-3 px-6 rounded-lg font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
+                  Call +35796471717
+                </button>
+              </a>
+              <a href="tel:+35796005009" className="w-full">
+                <button className="w-full bg-black text-white py-3 px-6 rounded-lg font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
+                  Call +35796005009
+                </button>
+              </a>
+              <a href="mailto:client@example.com" className="w-full">
+                <button className="w-full bg-black text-white py-3 px-6 rounded-lg font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
+                  Email Us
+                </button>
+              </a>
+            </div>
+            <button onClick={closeModal} className="mt-6 w-full bg-gray-300 text-gray-800 py-3 px-6 rounded-lg font-semibold transform transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
