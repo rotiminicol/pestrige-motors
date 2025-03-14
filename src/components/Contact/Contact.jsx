@@ -2,32 +2,30 @@ import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const socialLinks = [
   {
-    href: 'https://www.facebook.com/prestige_motors.cy/',
-    icon: <FaFacebookF className="text-black" size={24} />,
+    href: 'https://www.facebook.com/miamour/',
+    icon: <FaFacebookF className="text-white" size={24} />,
     alt: 'Facebook',
-    color: 'bg-gradient-to-r from-blue-500 to-blue-700'
+    color: 'bg-gradient-to-r from-pink-500 to-red-500'
   },
   {
-    href: 'https://www.instagram.com/prestige_motors.cy/',
+    href: 'https://www.instagram.com/miamour/',
     icon: <FaInstagram className="text-white" size={25} />,
     alt: 'Instagram',
-    color: 'bg-gradient-to-tr from-purple-600 via-pink-600 to-yellow-500'
+    color: 'bg-gradient-to-tr from-purple-500 via-pink-400 to-yellow-300'
   },
 ];
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 bg-white">
+    <section id="contact" className="py-16 bg-gradient-to-b from-pink-50 to-white">
       <div className="container mx-auto px-4 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
-        <div 
-          className="mb-12 lg:mb-0 lg:sticky lg:top-8 animate-fadeInUp"
-        >
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 lg:max-w-[12ch]">
-            Let&apos;s Create Something Amazing Together
+        <div className="mb-12 lg:mb-0 lg:sticky lg:top-8 animate-fadeInUp">
+          <h2 className="text-4xl font-bold text-pink-700 mb-6 lg:max-w-[12ch]">
+            Connect with Miamour
           </h2>
-
           <p className="text-lg text-gray-600 mb-8 lg:max-w-[35ch]">
-            Ready to bring your vision to life? Reach out today and let&apos;s discuss how we can make your project extraordinary.
+            Let’s make your dream wedding a reality. Share your vision with us,
+            and we’ll craft memories that last a lifetime.
           </p>
 
           <div className="flex items-center gap-4">
@@ -37,7 +35,7 @@ const Contact = () => {
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                className={`w-12 h-12 grid place-items-center rounded-lg ${color} shadow-lg transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 active:scale-95`}
+                className={`w-12 h-12 grid place-items-center rounded-full ${color} shadow-lg transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 active:scale-95`}
               >
                 {icon}
               </a>
@@ -46,7 +44,7 @@ const Contact = () => {
         </div>
 
         <form
-          action="https://getform.io/f/byvvzopa"
+          action="https://getform.io/f/miamour-contact"
           method="POST"
           className="bg-white rounded-2xl shadow-xl p-8 animate-fadeInRight"
         >
@@ -61,8 +59,8 @@ const Contact = () => {
                 id="name"
                 autoComplete="name"
                 required
-                placeholder="John Doe"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                placeholder="Jane & John"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300"
               />
             </div>
 
@@ -76,8 +74,8 @@ const Contact = () => {
                 id="email"
                 autoComplete="email"
                 required
-                placeholder="john@example.com"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                placeholder="janejohn@example.com"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300"
               />
             </div>
           </div>
@@ -90,14 +88,14 @@ const Contact = () => {
               name="message"
               id="message"
               required
-              placeholder="Tell me about your project..."
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-y min-h-32 max-h-80"
+              placeholder="Tell us about your love story or wedding ideas..."
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-400 focus:border-transparent transition-all duration-300 resize-y min-h-32 max-h-80"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:from-blue-700 hover:to-blue-800"
+            className="w-full bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:from-pink-600 hover:to-red-600"
           >
             Send Message
           </button>

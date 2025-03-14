@@ -10,7 +10,6 @@ import "aos/dist/aos.css";
 import Loader from "./components/Loader.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import Arrival from "./components/Arrival/Arrival.jsx";
-import Polish from "./components/Polish/Polish.jsx";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -45,9 +44,6 @@ const App = () => {
       </div>
       <div className="section-border-shadow">
         <Services />
-      </div>
-      <div className="section-border-shadow">
-        <Polish />
       </div>
       <div className="section-border-shadow">
         <Testimonials />

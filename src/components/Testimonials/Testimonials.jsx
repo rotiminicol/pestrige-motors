@@ -3,50 +3,26 @@ import Slider from "react-slick";
 const TestimonialData = [
   {
     id: 1,
-    name: "John Doe",
-    text: "I had an amazing experience with the car rental service. The vehicle was in perfect condition and the customer service was excellent.",
+    name: "Amara & Tunde",
+    text: "We are so grateful for the amazing wedding services. From planning to execution, everything was perfect. Thank you for making our day unforgettable!",
     img: "https://picsum.photos/101/101",
   },
   {
     id: 2,
-    name: "Jane Smith",
-    text: "The best car rental service I've used. Fast, reliable, and very affordable. Highly recommended!",
+    name: "Sophia & John",
+    text: "The team made our special day truly magical. Every detail was taken care of beautifully. Highly recommend their services!",
     img: "https://picsum.photos/102/102",
   },
   {
     id: 3,
-    name: "Michael Johnson",
-    text: "The car service was top-notch. The driver was punctual and the ride was very comfortable.",
+    name: "Olivia & Michael",
+    text: "Thank you for making our dream wedding come true. Everything exceeded our expectations!",
     img: "https://picsum.photos/104/104",
   },
   {
-    id: 5,
-    name: "Emily Davis",
-    text: "Renting a car was a breeze. The whole process was smooth and hassle-free. Will definitely use this service again.",
-    img: "https://picsum.photos/103/103",
-  },
-  {
-    id: 6,
-    name: "John Doe",
-    text: "I had an amazing experience with the car rental service. The vehicle was in perfect condition and the customer service was excellent.",
-    img: "https://picsum.photos/101/101",
-  },
-  {
-    id: 7,
-    name: "Jane Smith",
-    text: "The best car rental service I've used. Fast, reliable, and very affordable. Highly recommended!",
-    img: "https://picsum.photos/102/102",
-  },
-  {
-    id: 8,
-    name: "Michael Johnson",
-    text: "The car service was top-notch. The driver was punctual and the ride was very comfortable.",
-    img: "https://picsum.photos/104/104",
-  },
-  {
-    id: 9,
-    name: "Emily Davis",
-    text: "Renting a car was a breeze. The whole process was smooth and hassle-free. Will definitely use this service again.",
+    id: 4,
+    name: "Emma & David",
+    text: "From start to finish, everything was handled with love and professionalism. It was everything we hoped for and more.",
     img: "https://picsum.photos/103/103",
   },
 ];
@@ -59,10 +35,9 @@ const Testimonials = () => {
     speed: 500,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+    autoplaySpeed: 2500,
+    cssEase: "ease",
     pauseOnHover: true,
-    pauseOnFocus: true,
     responsive: [
       {
         breakpoint: 10000,
@@ -77,7 +52,6 @@ const Testimonials = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 2,
         },
       },
       {
@@ -91,53 +65,49 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-20 mt-20 bg-white relative transition-all duration-300
-      before:absolute before:inset-0 before:shadow-[0_-15px_30px_-10px_rgba(0,0,0,0.1)]
-      hover:before:shadow-[0_-20px_40px_-15px_rgba(0,0,0,0.15)]">
-      <div className="container">
-        {/* header section */}
-        <div className="mb-16">
+    <div className="py-20 mt-20 bg-gradient-to-b from-pink-100 via-white to-pink-50 relative transition-all duration-300">
+      <div className="container mx-auto px-6">
+        {/* Header section */}
+        <div className="mb-16 text-center">
           <h1
             data-aos="fade-up"
-            className="text-center text-4xl font-bold font-cursive"
+            className="text-4xl font-bold text-pink-700 font-serif"
           >
-            Our Customers Love Us
+            Our Happy Couples
           </h1>
+          <p className="text-gray-600 mt-4 text-lg">
+            Stories of love and joy from our cherished couples.
+          </p>
         </div>
 
         {/* Testimonial cards */}
         <div data-aos="zoom-in">
           <Slider {...settings}>
             {TestimonialData.map((data) => (
-              <div key={data.id} className="my-6 px-3">
+              <div key={data.id} className="px-3">
                 <div
-                  className="flex flex-col gap-4 p-6 mx-2 rounded-lg
-                    bg-white 
-                    shadow-md
-                    transition-all duration-300
-                    hover:-translate-y-1
-                    hover:shadow-lg"
+                  className="flex flex-col items-center p-6 rounded-lg bg-white 
+                    shadow-lg transform transition-transform duration-300
+                    hover:-translate-y-2"
                 >
                   <div className="mb-4">
                     <img
                       src={data.img}
                       alt=""
-                      className="rounded-full w-20 h-20 mx-auto shadow-sm"
+                      className="rounded-full w-24 h-24 border-4 border-pink-300 shadow-sm"
                     />
                   </div>
-                  {/* content section */}
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="space-y-3">
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        {data.text}
-                      </p>
-                      <h1 className="text-xl font-bold text-gray-800 font-cursive2">
-                        {data.name}
-                      </h1>
-                    </div>
+                  {/* Content section */}
+                  <div className="text-center space-y-3">
+                    <p className="text-sm text-gray-700 italic leading-relaxed">
+                      {data.text}
+                    </p>
+                    <h1 className="text-lg font-bold text-pink-800 font-serif">
+                      {data.name}
+                    </h1>
                   </div>
                   <div className="absolute top-4 right-4 opacity-10">
-                    <p className="text-7xl font-serif leading-none">,,</p>
+                    <p className="text-5xl text-pink-300 leading-none">♥</p>
                   </div>
                 </div>
               </div>

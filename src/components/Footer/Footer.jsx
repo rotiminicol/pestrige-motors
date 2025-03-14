@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaTwitter, FaPinterest } from "react-icons/fa";
 
 const FooterLinks = [
   {
@@ -6,16 +6,20 @@ const FooterLinks = [
     link: "/#",
   },
   {
-    title: "About",
+    title: "About Us",
     link: "/#about",
   },
   {
-    title: "Contact",
-    link: "/#contact",
+    title: "Gallery",
+    link: "/#gallery",
   },
   {
-    title: "Blog",
-    link: "/#blog",
+    title: "Packages",
+    link: "/#packages",
+  },
+  {
+    title: "Testimonials",
+    link: "/#testimonials",
   },
 ];
 
@@ -25,7 +29,7 @@ const QuickLinks = [
     link: "/#privacy",
   },
   {
-    title: "Terms of Service",
+    title: "Terms & Conditions",
     link: "/#terms",
   },
   {
@@ -40,96 +44,105 @@ const QuickLinks = [
 
 const Footer = () => {
   return (
-    <div className="bg-black text-white">
-      <div className="bg-black/40 min-h-[400px]">
-        <div className="container grid md:grid-cols-4 pb-20 pt-5 gap-8">
-          {/* Company details */}
-          <div className="py-8 px-4">
+    <footer className="bg-gradient-to-br from-pink-50 via-pink-100 to-pink-200 text-gray-700 py-16">
+      <div className="container mx-auto px-6 lg:grid lg:grid-cols-4 gap-12">
+        {/* Brand and Tagline */}
+        <div className="mb-8 lg:mb-0">
+          <h2 className="text-4xl font-cursive text-pink-700 mb-4">
+            miAmour
+          </h2>
+          <p className="text-gray-600">
+            Crafting unforgettable memories for your special day. Where love blossoms and moments turn magical.
+          </p>
+          <div className="mt-6 flex space-x-4">
             <a
-              href="#"
-              className="font-semibold tracking-widest text-2xl sm:text-3xl font-cursive"
-            >
-              Prestige Motors
-            </a>
-            <p className="pt-4">
-              Reliable and Affordable Car Rentals and Services – Experience the Best Ride
-            </p>
-            <a
-              href="https://www.instagram.com/prestige_motors.cy/"
+              href="https://www.instagram.com/miamour.me"
               target="_blank"
               rel="noreferrer"
-              className="inline-block bg-yellow-500 py-2 px-4 mt-5 text-sm rounded-full"
+              className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition duration-300"
             >
-              Visit our Page
+              <FaFacebookF className="text-white text-xl" />
+            </a>
+            <a
+              href="https://www.instagram.com/miamour.me"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 bg-gradient-to-tr from-purple-500 via-pink-500 to-yellow-400 hover:opacity-90 rounded-full flex items-center justify-center transition duration-300"
+            >
+              <FaInstagram className="text-white text-xl" />
+            </a>
+            <a
+              href="https://www.instagram.com/miamour.me"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 bg-blue-400 hover:bg-blue-500 rounded-full flex items-center justify-center transition duration-300"
+            >
+              <FaTwitter className="text-white text-xl" />
+            </a>
+            <a
+              href="https://www.instagram.com/miamour.me"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center transition duration-300"
+            >
+              <FaPinterest className="text-white text-xl" />
             </a>
           </div>
+        </div>
 
-          {/* Important Links */}
-          <div className="py-8 px-4">
-            <h1 className="text-xl font-semibold sm:text-left mb-3">
-              Important Links
-            </h1>
-            <ul className="space-y-3">
-              {FooterLinks.map((data, index) => (
-                <li key={index}>
-                  <a
-                    href={data.link}
-                    className="inline-block hover:text-yellow-500 duration-200"
-                  >
-                    {data.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div className="py-8 px-4">
-            <h1 className="text-xl font-semibold sm:text-left mb-3">
-              Quick Links
-            </h1>
-            <ul className="space-y-3">
-              {QuickLinks.map((data, index) => (
-                <li key={index}>
-                  <a
-                    href={data.link}
-                    className="inline-block hover:text-yellow-500 duration-200"
-                  >
-                    {data.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Information */}
-          <div className="py-8 px-4">
-            <h1 className="text-xl font-semibold sm:text-left mb-3">
-              Contact Information
-            </h1>
-            <div>
-              <p className="mb-3">Kissonergas Κατ. 5, Kissonerga 8574</p>
-              <p className="mb-3">📞 +357 96471717</p>
-              <p className="mb-3">📞 +357 96005009</p>
-              <p className="mb-3">📧 info@prestigemotors.cy</p>
-
-              {/* Social links */}
-              <div className="flex items-center gap-3 mt-6">
-                <a href="https://www.instagram.com/prestige_motors.cy/">
-                  <FaInstagram className="text-3xl hover:text-yellow-500 duration-300" />
+        {/* Navigation Links */}
+        <div className="mb-8 lg:mb-0">
+          <h3 className="text-xl font-semibold text-pink-700 mb-4">Explore</h3>
+          <ul className="space-y-3">
+            {FooterLinks.map((link, index) => (
+              <li key={index}>
+                <a
+                  href={link.link}
+                  className="hover:text-pink-600 transition duration-300"
+                >
+                  {link.title}
                 </a>
-                <a href="https://www.facebook.com/prestige_motors.cy/">
-                  <FaFacebook className="text-3xl hover:text-yellow-500 duration-300" />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Quick Links */}
+        <div className="mb-8 lg:mb-0">
+          <h3 className="text-xl font-semibold text-pink-700 mb-4">Quick Links</h3>
+          <ul className="space-y-3">
+            {QuickLinks.map((link, index) => (
+              <li key={index}>
+                <a
+                  href={link.link}
+                  className="hover:text-pink-600 transition duration-300"
+                >
+                  {link.title}
                 </a>
-              </div>
-            </div>
-          </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h3 className="text-xl font-semibold text-pink-700 mb-4">Get In Touch</h3>
+          <p className="mb-4">Suite 101, Love Blossom Avenue, Bridal City</p>
+          <p className="mb-2">📞 09044130171</p>
+          <p className="mb-4">📧 contact@miamour.com</p>
+          <button
+            className="mt-4 bg-gradient-to-r from-pink-500 to-red-500 text-white px-6 py-3 rounded-full shadow-lg hover:opacity-90 transition duration-300"
+          >
+            Contact Us
+          </button>
         </div>
       </div>
-      <div className="bg-black/60 py-4 text-center">
-        <p className="text-sm">&copy; {new Date().getFullYear()} Rotimi Nicol. All rights reserved.</p>
+      <div className="text-center mt-12 text-gray-600 border-t border-pink-300 pt-8">
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} miAmour. All rights reserved. | Designed with 💕 by Arigo Tech        
+          </p>
       </div>
-    </div>
+    </footer>
   );
 };
 
